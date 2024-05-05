@@ -16,6 +16,16 @@ module Enumerable
     end
     answer
   end
+
+  def my_all?
+    answer = true
+    while answer == true
+      for i in self do
+        answer = false unless yield i
+      end
+    end
+    answer
+  end
 end
 
 # You will first have to define my_each
