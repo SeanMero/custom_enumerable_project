@@ -8,6 +8,14 @@ module Enumerable
     end
     self
   end
+
+  def my_select
+    answer = []
+    for i in self do
+      answer.push(i) if yield i
+    end
+    answer
+  end
 end
 
 # You will first have to define my_each
