@@ -1,5 +1,13 @@
 module Enumerable
   # Your code goes here
+  def my_each_with_index
+    count = 0
+    for i in self do
+      yield i, count
+      count += 1
+    end
+    self
+  end
 end
 
 # You will first have to define my_each
@@ -12,8 +20,6 @@ class Array
     for i in self do
       yield i
     end
-
     self
-
   end
 end
