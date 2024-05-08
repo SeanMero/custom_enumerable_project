@@ -22,11 +22,20 @@ module Enumerable
     answer = true
     for i in self do
       answer = false unless yield i
-      # binding.pry
+    end
+    answer
+  end
+
+  def my_any?
+    answer = false
+    for i in self do
+      answer = true if yield i
     end
     answer
   end
 end
+
+
 
 # You will first have to define my_each
 # on the Array class. Methods defined in
