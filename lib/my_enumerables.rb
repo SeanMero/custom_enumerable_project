@@ -1,3 +1,4 @@
+require 'pry-byebug'
 module Enumerable
   # Your code goes here
   def my_each_with_index
@@ -19,10 +20,9 @@ module Enumerable
 
   def my_all?
     answer = true
-    while answer == true
-      for i in self do
-        answer = false unless yield i
-      end
+    for i in self do
+      answer = false unless yield i
+      # binding.pry
     end
     answer
   end
