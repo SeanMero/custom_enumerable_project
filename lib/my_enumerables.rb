@@ -41,6 +41,18 @@ module Enumerable
     end
     answer
   end
+
+  def my_count
+    if block_given?
+      answer = []
+      for i in self do
+        answer.push(i) if yield i
+      end
+      answer.length
+    else
+    self.length
+    end
+  end
 end
 
 
