@@ -1,4 +1,3 @@
-require 'pry-byebug'
 module Enumerable
   # Your code goes here
   def my_each_with_index
@@ -50,7 +49,7 @@ module Enumerable
       end
       answer.length
     else
-    self.length
+      self.length
     end
   end
 
@@ -62,11 +61,13 @@ module Enumerable
     answer
   end
 
-  def my_inject
+  def my_inject(initial_value)
+    for i in self do
+      initial_value = yield initial_value, i
+    end
+    initial_value
   end
 end
-
-
 
 # You will first have to define my_each
 # on the Array class. Methods defined in
