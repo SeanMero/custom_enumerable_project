@@ -53,6 +53,17 @@ module Enumerable
     self.length
     end
   end
+
+  def my_map
+    answer = []
+    for i in self do
+      answer.push(yield i)
+    end
+    answer
+  end
+
+  def my_inject
+  end
 end
 
 
