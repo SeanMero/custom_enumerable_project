@@ -33,6 +33,14 @@ module Enumerable
     end
     answer
   end
+
+  def my_none?
+    answer = true
+    for i in self do
+      answer = false if yield i
+    end
+    answer
+  end
 end
 
 
